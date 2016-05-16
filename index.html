@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="matrix.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var canvas = document.getElementById('matrixCanvas');
+        var matrix = new Matrix(canvas, {
+          fps: 15,
+          fontColor: 'darkgreen',
+          excludeRegex: /[013589]/g
+        })
+        matrix.start();
+      });
+    </script>
+    <style media="screen">
+      body {
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="matrixCanvas" width="210" height="210"></canvas>
+  </body>
+</html>
