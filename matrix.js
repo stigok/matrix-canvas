@@ -10,12 +10,11 @@ function Matrix(canvas, options) {
     fontSize: 10,
     fps: 15,
     fontColor: 'darkgreen',
-    width: canvas.width,
-    height: canvas.height,
     excludeRegex: null
   }, options);
-  this.maxLines = this.options.height / this.options.fontSize;
-  this.maxColumns = this.options.width / this.options.fontSize * 2;
+
+  // Set canvas width and height
+  this.updateCanvasSize();
 }
 
 //
@@ -61,8 +60,15 @@ Matrix.prototype.writeText = function (text, y) {
   this.ctx.strokeText(text, 0, y);
 };
 
+Matrix.prototype.updateCanvasSize = function () {
+  this.canvas.width = window.innerWidth;
+  this.canvas.height = window.innerHeight;
+  this.maxLines = this.canvas.height / this.options.fontSize;
+  this.maxColumns = this.canvas.width / this.options.fontSize * 2;
+};
+
 Matrix.prototype.clear = function () {
-  this.ctx.clearRect(0, 0, this.options.width, this.options.height);
+  this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 };
 
 //

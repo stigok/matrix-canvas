@@ -2,12 +2,18 @@
 
 - Tested in Chrome
 
+## Demo
+
+[<kbd>Enter the matrix</kbd>](https://stigok.github.io/matrix-canvas)
+
 ## Usage
 
     var canvas = document.getElementById('matrixCanvas');
     var matrix = new Matrix(canvas, {
-      fontColor: 'white'
-    })
+      fps: 15,
+      fontColor: 'darkgreen',
+      excludeRegex: /[013589]/g
+    });
     matrix.start();
 
 Use `excludeRegex` option to replace matches with spaces.
@@ -18,13 +24,12 @@ See [index.html](index.html) for example.
 
     {
       fontSize: 10,
-      fps: 4,
+      fps: 15,
       fontColor: 'darkgreen',
-      width: canvas.width,
-      height: canvas.height,
       excludeRegex: null
     }
 
 # Contributors
 
-Neo
+- Neo
+- [jaredwilly](http://stackoverflow.com/a/8486324/90674)
