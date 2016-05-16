@@ -10,10 +10,7 @@
     <script type="text/javascript" src="matrix.js"></script>
     <script type="text/javascript">
       $(function () {
-        var $canvas = $('#matrixCanvas').css({
-          width: '100%',
-          height: '100%'
-        });
+        var $canvas = $('#matrixCanvas');
         var canvas = $canvas.get(0);
         var matrix = new Matrix(canvas, {
           fps: 15,
@@ -24,13 +21,24 @@
       });
     </script>
     <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+      canvas {
+        display: block;
+      }
       body {
         background-color: #000;
-        overflow: hidden;
+        cursor: alias;
       }
     </style>
   </head>
   <body>
-    <canvas id="matrixCanvas" width="420" height="420"></canvas>
+    <canvas id="matrixCanvas"></canvas>
   </body>
 </html>
