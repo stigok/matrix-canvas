@@ -9,9 +9,8 @@
       $(function () {
         var canvas = document.getElementById('matrixCanvas');
         var matrix = new Matrix(canvas, {
-          fps: 15,
-          fontColor: 'darkgreen',
-          excludeRegex: /[013589]/g
+          fps: '77742111'.split('').reduce((a, b) => a + Number(b), 0),
+          excludeRegex: /[0135689]/g
         });
 
         ['resize', 'orientationchange'].forEach(event => window.addEventListener(event, matrix.updateCanvasSize.bind(matrix), false));
