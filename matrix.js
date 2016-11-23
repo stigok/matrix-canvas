@@ -6,7 +6,7 @@ function Matrix(canvas, options) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.interval = null;
-  this.options = _.extend({
+  this.options = Object.assign({
     fontSize: 10,
     fps: 15,
     fontColor: 'darkgreen',
