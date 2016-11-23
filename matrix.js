@@ -49,7 +49,9 @@ Matrix.prototype.drawLines = function () {
 
     // Alien egg insertion
     const egg = 'sshowfosho'.split('');
-    if (Math.floor(this.maxLines / 2) === i) {
+    let mod = Math.floor(Math.random() * 10) % 2;
+    mod = Math.random() < .5 ? -mod : mod;
+    if (Math.floor(this.maxLines / 2) + mod === i) {
       const arr = str.split('');
       const pos = Math.floor(this.maxColumns / 2) - egg.length;
       arr.splice(pos, egg.length, ...egg);
