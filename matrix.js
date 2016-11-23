@@ -46,6 +46,16 @@ Matrix.prototype.drawLines = function () {
     if (this.options.excludeRegex) {
       str = str.replace(this.options.excludeRegex, ' ');
     }
+
+    // Alien egg insertion
+    const egg = 'sshowfosho'.split('');
+    if (Math.floor(this.maxLines / 2) === i) {
+      const arr = str.split('');
+      const pos = Math.floor(this.maxColumns / 2) - egg.length;
+      arr.splice(pos, egg.length, ...egg);
+      str = arr.join('');
+    }
+
     this.writeLine(str, i);
   }
 };
