@@ -14,7 +14,7 @@
           excludeRegex: /[013589]/g
         });
 
-        window.addEventListener('resize', matrix.updateCanvasSize.bind(matrix), false);
+        ['resize', 'orientationchange'].forEach(event => window.addEventListener(event, matrix.updateCanvasSize.bind(matrix), false));
 
         // Enter the matrix
         matrix.start();
